@@ -161,11 +161,6 @@ func (threadUseCase *ThreadUseCaseImpl) Vote(slugOrID string, vote *models.Vote)
 		return
 	}
 	thread.Votes, err = threadUseCase.threadRepository.GetVotes(thread.ID)
-	//if threadUseCase.voteRepository.IsVoted(thread.ID, vote) {
-	//	err = threadUseCase.voteRepository.Update(thread, vote)
-	//} else {
-	//	err = threadUseCase.voteRepository.Create(thread, vote)
-	//}
 
 	return
 }

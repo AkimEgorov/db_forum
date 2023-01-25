@@ -6,5 +6,7 @@
 *.test
 *.out
 *.html
+*.txt
+*.gz
 .idea/
 

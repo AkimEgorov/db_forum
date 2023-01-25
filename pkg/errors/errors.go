@@ -8,24 +8,24 @@ import (
 
 var (
 	// Forum errors
-	ErrForumNotExist        = errors.New("Can't find user with id ") // TODO
-	ErrForumOwnerNotFound   = errors.New("Can't find user with id ") // TODO
+	ErrForumNotExist        = errors.New("Can't find user with id ")
+	ErrForumOwnerNotFound   = errors.New("Can't find user with id ")
 	ErrForumAlreadyExists   = errors.New("forum already exist")
-	ErrForumOrTheadNotFound = errors.New("Can't find user with id ") // TODO
+	ErrForumOrTheadNotFound = errors.New("Can't find user with id ")
 
 	// Thread errors
 	ErrThreadAlreadyExists = errors.New("thread already exist")
-	ErrThreadNotFound      = errors.New("Can't find user with id ") // TODO
+	ErrThreadNotFound      = errors.New("Can't find user with id ")
 
 	// Post errors
-	ErrPostNotFound              = errors.New("Can't find user with id ") // TODO
-	ErrParentPostNotExist        = errors.New("Can't find user with id ") // TODO
+	ErrPostNotFound              = errors.New("Can't find user with id ")
+	ErrParentPostNotExist        = errors.New("Can't find user with id ")
 	ErrParentPostFromOtherThread = errors.New("Can't find user with id ")
 
 	// User errors
 	ErrUserAlreadyExist = errors.New("user already exist")
-	ErrUserNotFound     = errors.New("Can't find user with id ") // TODO
-	ErrUserDataConflict = errors.New("Can't find user with id ") // TODO
+	ErrUserNotFound     = errors.New("Can't find user with id ")
+	ErrUserDataConflict = errors.New("Can't find user with id ")
 
 	// Request Errors
 	ErrBadInputData = errors.New("bad input data")

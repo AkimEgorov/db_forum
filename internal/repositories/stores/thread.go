@@ -149,23 +149,6 @@ func (threadStore *ThreadStore) GetPostsTree(threadID int64, limit, since int, d
 			rows, err = threadStore.db.Query(query, threadID, limit)
 		}
 	} else {
-		//var path []int64
-		//err = threadStore.db.QueryRow("SELECT path FROM posts WHERE id = $1;", since).
-		//	Scan(&path)
-		//if err != nil {
-		//	return
-		//}
-		//
-		//if desc {
-		//	query := "SELECT id, COALESCE(parent, 0), author, message, is_edited, forum, thread, created FROM posts " +
-		//		"WHERE thread = $1 AND path < $2 ORDER BY path DESC LIMIT NULLIF($3, 0);"
-		//	rows, err = threadStore.db.Query(query, threadID, path, limit)
-		//} else {
-		//	query := "SELECT id, COALESCE(parent, 0), author, message, is_edited, forum, thread, created FROM posts " +
-		//		"WHERE thread = $1 AND path > $2 ORDER BY path LIMIT NULLIF($3, 0);"
-		//	rows, err = threadStore.db.Query(query, threadID, path, limit)
-		//}
-
 		if desc {
 			query := "SELECT id, COALESCE(parent, 0), author, message, is_edited, forum, thread, created FROM posts " +
 				"WHERE thread = $1 AND path < (SELECT path FROM posts WHERE id = $2) ORDER BY path DESC LIMIT NULLIF($3, 0);"
